@@ -1,12 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import LocationMap from "../components/LocationMap.astro";
 
 const hero = {
-    image: "/images/hero.jpg",
-    h1: "Entdecken statt Klicken!",
-    h2: "Kreativ mit Herz & Hand:",
-    p: "Handgemachtes, Schönes & Persönliches – direkt aus der Region."
+    image: "/images/kontakt/hero.jpg",
+    h1: "Kontakt",
+    h2: "",
+    p: "So kannst du uns finden und mit uns Kontakt aufnehmen."
 }
 
 /*
@@ -32,4 +33,5 @@ const cards = [
 
 <Layout>
     <Hero block={hero} />
+    <LocationMap />
 </Layout>

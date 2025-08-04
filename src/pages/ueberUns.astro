@@ -1,36 +1,52 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import CardGrid from "../components/CardGrid.astro";
 
 const hero = {
-    image: "/images/hero.jpg",
-    h1: "Entdecken statt Klicken!",
-    h2: "Kreativ mit Herz & Hand:",
-    p: "Handgemachtes, Schönes & Persönliches – direkt aus der Region."
+    image: "/images/ueberUns/hero.jpg",
+    h1: "Über Uns",
+    h2: "",
+    p: "Wir stellen uns vor: Unsere Geschichte und Erfolg der letzten Jahre. "
 }
 
-/*
 const cards = [
     {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
+        image: { url: '', alt: '' },
+        headline: 'Michael Grassmüller',
+        text: 'Geschäftsinhaber <br><br> Organisationstalent und Gestalter der Holzwelt von MG Design'
     },
     {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
+        image: { url: '', alt: '' },
+        headline: 'Catrin Grassmüller',
+        text: 'Verkaufsfee <br><br> Kreative Ader des Allerleis und Gestalterin der Nähwelt von Feen Zauber'
     },
     {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
-    }
+        image: { url: '', alt: '' },
+        headline: 'Andrea Malutzki',
+        text: 'Verkaufsfee <br><br> Hauptunterstützerin des Holler Allerleis und Kreative Gestalterin'
+    },
 ];
- */
 ---
 
 <Layout>
     <Hero block={hero} />
+    <h2 class="text-4xl font-bold text-left mb-10 px-15 max-w-[900px] m-auto">Kreativ mit Herz & Hand</h2>
+    <p class="text-l px-15 text-left max-w-[900px] m-auto mb-30">
+        Seit dem Frühjahr 2009 ist das Holler Allerlei der kreativer Bestandteil von Holle — aus einer spontanen Idee wurde ein Lieblingsladen:<br>
+        Damals eröffnete unser kleines Lädchen mit selbstgebasteltem Papierwerk, Bastelbedarf und einer Änderungsschneiderei samt Wäscherei und Schuhreparatur.<br><br>
+
+        Schnell erkannten wir, dass unsere Kunden/innen mehr wollten: Schreibwaren, Schulbücher, Bastelideen, Wolle, Häkelzubehör – alles kam dazu, begleitet vom stetigen Wunsch nach neuen kleinen Schätzen.<br>
+        2013 erweiterten wir unser Sortiment mit 40m² voller Inspiration: Geschenkideen, Dekoartikel, Kleinspielwaren – Platz für Kreatives, Liebevolles und praktische Begleiter fürs tägliche Leben.<br><br>
+
+        All Das wuchs organisch durch Euch. Euer Wunsch nach individuellen Produkten aus Stoff oder Holz wurden zum Herzstück unseres Angebots — gefertigt mit Herz, Hand und Persönlichkeit, ganz nach dem Motto:<br>
+        Keine Massenproduktion, sondern echte Unikate mit Geschichte.<br><br>
+
+        Seit dem 1.Januar 2023 führen wir das Holler Allerlei generationsübergreifend weiter – mit frischem Elan und bewährter, familiärer Nähe. Bis heute kombinieren wir seit über 14 Jahren Tradition mit neuen Ideen:<br>
+        Auf knapp 100m² lebt Bewährtes neben Neugier – alles liebevoll arrangiert zwischen Regalen, Stoffballen und Handwerkskunst.<br><br>
+
+        Wir lieben was wir tun, und freuen uns, euch zu inspirieren: Ob individuelle Textilideen, Schulbestellungen oder einfach ein spontaner Besuch zum Stöbern und Mitnehmen — wir freuen uns auf dich!<br>
+    </p>
+    <CardGrid items={cards} />
 </Layout>
 
