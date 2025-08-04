@@ -1,14 +1,16 @@
 ---
 // src/components/Hero.astro
+
+const { block } = Astro.props;
 ---
 
 <section class="relative h-screen mb-20 flex items-center justify-center text-center text-white">
-<img src="/images/hero.jpg" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-50" />
+<img src={block.image} alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-50" />
 <div class="relative z-10">
   <h1 class="text-5xl md:text-7xl font-bold mb-2 text-white!">
-    Entdecken <span class="font-light">statt</span> Klicken!
+    {block.h1}
   </h1>
-  <h2 class="text-3xl md:text-4xl text-white!">Dein Lieblingsladen ums Eck</h2>
-  <p class="mt-10 text-xl">Handgemachtes, Schönes & Persönliches – direkt aus der Region.</p>
+  <h2 class="text-3xl md:text-4xl text-white!">{block.h2}</h2>
+  <p class="mt-10 text-xl">{block.p}</p>
 </div>
 </section>

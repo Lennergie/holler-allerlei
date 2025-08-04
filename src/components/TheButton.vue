@@ -1,6 +1,6 @@
 <template>
   <div class="bubble-button-wrapper">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+    <svg xmlns="http://www.w3.org/2000/svg" class="goo">
       <defs>
         <filter id="goo">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />

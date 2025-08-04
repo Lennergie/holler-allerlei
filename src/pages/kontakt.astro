@@ -1,6 +1,35 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+
+const hero = {
+    image: "/images/hero.jpg",
+    h1: "Entdecken statt Klicken!",
+    h2: "Kreativ mit Herz & Hand:",
+    p: "Handgemachtes, Schönes & Persönliches – direkt aus der Region."
+}
+
+/*
+const cards = [
+    {
+        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
+        headline: 'Card Title 1',
+        text: 'This is the description for card 1. This is the description for card 1.',
+    },
+    {
+        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
+        headline: 'Card Title 1',
+        text: 'This is the description for card 1. This is the description for card 1.',
+    },
+    {
+        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
+        headline: 'Card Title 1',
+        text: 'This is the description for card 1. This is the description for card 1.',
+    }
+];
+ */
 ---
 
 <Layout>
+    <Hero block={hero} />
 </Layout>

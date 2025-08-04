@@ -18,6 +18,15 @@
 }
 
 @font-face {
+    font-family: "ExpletusSansBold";
+    src: url('/font/ExpletusSans-Bold.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
     font-family: "Lexend";
     src: url('/font/Lexend.woff') format('woff');
     font-weight: 100 900;
@@ -45,7 +54,8 @@ html, body{
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: "ExpletusSans", "Arial", sans-serif;
+    font-family: "ExpletusSansBold", "Arial", sans-serif;
+    font-weight: bold;
     color: var(--grey);
 }
 

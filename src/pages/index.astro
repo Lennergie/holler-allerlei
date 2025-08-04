@@ -4,35 +4,21 @@ import Hero from "../components/Hero.astro";
 import CategoryIcons from "../components/CategoryIcons.astro";
 import LocationMap from "../components/LocationMap.astro";
 import FeatureBlock from "../components/FeatureBlock.astro"
-//import CardGrid from '../components/CardGrid.astro';
 import News from '../components/News.astro';
 
-/*
-const cards = [
-    {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
-    },
-    {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
-    },
-    {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
-    }
-];
- */
+const hero = {
+    image: "/images/hero.jpg",
+    h1: "Entdecken statt Klicken!",
+    h2: "Kreativ mit Herz & Hand:",
+    p: "Handgemachtes, Schönes & Persönliches – direkt aus der Region."
+}
 
 const holzBlock = {
     layout: 'horizontal',
     content: {
-        headline: 'Handgefertigte Holzartikel',
+        headline: 'Einzelstücke aus Holz',
         description:
-            'Unsere Holzprodukte sind Einzelstücke. Sie werden aus diversen Holzarten und -teilen gefertigt, alles in Michaels hauseigenen Werkstatt.',
+            'Jedes Stück ist ein echtes Unikat: kein Produkt von der Stange, sondern mit Charakter, die aus Liebe zum Material gefertigt werden– direkt aus der eigenen Heimwerkstatt, mit Herz & Hand.',
         buttonText: 'Entdecken',
         buttonLink: '/holzprodukte',
     },
@@ -44,34 +30,22 @@ const holzBlock = {
     ],
 };
 
-/*
-const servicesBlock = {
-    layout: 'gallery',
+
+
+const linksBlock = {
+    layout: 'links',
     content: {
         headline: 'Service vor Ort!',
         description: 'Neben unserem umfangreichen Sortiment bieten wir dir auch verschiedene Dienstleistungen an, die deinen Alltag erleichtern.',
 
     },
     images: [
-        { url: '/images/micha.png', alt: 'Resin Dekor 1' },
-        { url: '/images/micha.png', alt: 'Resin Dekor 2' },
-        { url: '/images/micha.png', alt: 'Resin Dekor 3' },
-    ],
-};
-*/
-
-const linksBlock = {
-    layout: 'links',
-    content: {
-        headline: 'Links!',
-        description: 'LINKS.',
-
-    },
-    images: [
-        { url: '/images/paketshop.png', alt: 'Resin Dekor 1', headline: 'Resin Dekor 1', text: 'REsin' },
-        { url: '/images/aenderungsschneiderei.png', alt: 'Resin Dekor 2', headline: 'Resin Dekor 1', text: 'REsin' },
-        { url: '/images/schuhster.png', alt: 'Resin Dekor 3', headline: 'Resin Dekor 1', text: 'REsin' },
-        { url: '/images/reinigung.png', alt: 'Resin Dekor 3', headline: 'Resin Dekor 1', text: 'REsin' },
+        { url: '/images/paketshop.png', alt: 'Paketshop', headline: 'Paketshop', text: 'Wir versenden deine Pakete \n' +
+                'mit DPD & Hermes' },
+        { url: '/images/aenderungsschneiderei.png', alt: 'Änderungsschneiderei', headline: 'Änderungsschneiderei', text: 'Was nicht passt wird \n' +
+                'passend gemacht! ' },
+        { url: '/images/schuhster.png', alt: 'Schuster-Service', headline: 'Schuster-Service', text: 'Wir hauchen deinen kaputten Schuhen wieder Leben ein' },
+        { url: '/images/reinigung.png', alt: 'Reinigung', headline: 'Reinigung', text: 'Von Alltagspulli bis Abendkleid - das schaffen wir!' },
     ],
 };
 
@@ -82,7 +56,7 @@ const feenBlock = {
         description:
             'Wir nähen für euch selbst – kreativ und mit viel Liebe zum Detail. \n' +
             'Ob Abwaschtücher, Körnerkissen oder ein kuscheliger Rundschal: \n' +
-            'Bei uns findet ihr eigene Kreationen und bekommt Gehör für individuelle Wünsche.',
+            'Bei uns findet ihr eigene Kreationen und ein offenes Ohr für individuelle Wünsche.',
         buttonText: 'Entdecken',
         buttonLink: '/feenzauber',
     },
@@ -94,13 +68,10 @@ const feenBlock = {
     ],
 };
 ---
-<!--
-    <CardGrid items={cards} />
--->
 
 
 <Layout>
-    <Hero />
+    <Hero block={hero} />
     <CategoryIcons />
     <News />
     <FeatureBlock block={holzBlock} />

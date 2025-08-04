@@ -1,6 +1,149 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import CardGrid from "../components/CardGrid.astro";
+import FeatureBlock from "../components/FeatureBlock.astro";
+
+const hero = {
+    image: "/images/sortiment/hero.jpg",
+    h1: "Sortiment",
+    h2: "",
+    p: "Entdecke unsere vielfältige Auswahl an Wolle, Bastelbedarf, Schulbedarf und vieles mehr."
+}
+
+const cards = [
+    {
+        image: { url: '/images/sortiment/WolleStricken.png', alt: 'WolleStricken' },
+        headline: 'Wolle & Stricken',
+        text: 'Hochwertige Wolle und Garne für alle Ihre Strickprojekte<br><br>\n' +
+            '-Strickzubehör <br>\n' +
+            '-Wolle / Garn <br>\n' +
+            '-Häkelzubehör',
+    },
+    {
+        image: { url: '/images/sortiment/Naehartikel.jpg', alt: 'Naehartikel' },
+        headline: 'Nähartikel',
+        text: 'Alles für Ihre kreativen Näharbeitsprojekte<br><br>\n' +
+            '-Stickgarn <br>\n' +
+            '-Stoffe <br>\n' +
+            '-Nähzubehör',
+    },
+    {
+        image: { url: '/images/sortiment/KleinDekoartikel.jpg', alt: 'KleinDekoartikel' },
+        headline: 'Klein Dekoartikel',
+        text: 'Alles für kleine Geschenke und Muntermacher für die Seele<br><br>\n' +
+            '-Glücksbringer <br>\n' +
+            '-Anhänger aus Glas <br>\n' +
+            '-Schutzengel',
+    }
+];
+
+const resin = {
+    layout: 'gallery',
+    content: {
+        headline: 'Resinarbeit',
+        description: 'Immer wieder etwas neues dabei: Feen Zauber gestaltet aus Resinmaterial kleine Deko - und Feinartikel.\n' +
+            'Mit Liebe zum Detail werden Form und Farbe durchdacht gewählt und erschafft regelmäßig ein kleines neues Kunsthandwerk.'
+    },
+    images: [
+        { url: '/images/sortiment/resinLady1.jpg', alt: 'Resin Dekor 1' },
+        { url: '/images/sortiment/ResinLady2.jpg', alt: 'Resin Dekor 2' },
+        { url: '/images/sortiment/ResinLady3.jpg', alt: 'Resin Dekor 3' },
+    ],
+};
+
+const cards2 = [
+    {
+        image: { url: '/images/sortiment/Schulartikel.jpg', alt: 'Schulartikel' },
+        headline: 'Schulartikel',
+        text: 'Hochwertige Schulprodukte und alles für den Schulanfang<br><br>\n' +
+            '-Füller und Schreibwaren <br>\n' +
+            '-Hefter und Ordner <br>\n' +
+            '-Schreibblöcke',
+    },
+    {
+        image: { url: '/images/sortiment/Schreibwaren.jpg', alt: 'Schreibwaren' },
+        headline: 'Schreibwaren',
+        text: 'Handschrift statt Tastatur: aller Art von Schreibartikeln<br><br>\n' +
+            '-Buntstifte und Bleistifte<br>\n' +
+            '-Fineliner und Füller <br>\n' +
+            '-Schreibpapier und Umschläge',
+    },
+    {
+        image: { url: '/images/sortiment/Bastelartikel.jpg', alt: 'Bastelartikel' },
+        headline: 'Bastelartikel',
+        text: 'Lass deiner Kreativität freien Lauf und bastel los<br><br>\n' +
+            '-Pappe und Hartkarton <br>\n' +
+            '-Kleber und Klebstifte <br>\n' +
+            '-Bastelzubehör',
+    }
+];
+
+const specialDeco = {
+    layout: 'gallery',
+    content: {
+        headline: 'Spezielle Dekoartikel',
+        description: 'Holz trifft Metall: eine kleine und spezielle Dekoreihe die den rustikalen und modernen Touch vereint.\n' +
+            '\n' +
+            'Das Holler Allerlei bietet noch weitere spezielle Dekoartikel an - schau gern zum Stöbern mal rein.'
+    },
+    images: [
+        { url: '/images/sortiment/holzMetall1.jpg', alt: 'holzMetall1' },
+        { url: '/images/sortiment/holzMetall2.jpg', alt: 'holzMetall2' },
+        { url: '/images/sortiment/holzMetall3.jpg', alt: 'holzMetall3' },
+    ],
+};
+
+const cards3 = [
+    {
+        image: { url: '/images/sortiment/Kleinspielwaren.jpg', alt: 'Schulartikel' },
+        headline: 'Kleinspielwaren',
+        text: 'Spielzeuge und Alltagshelfer für die Kleinen<br><br>\n' +
+            '-Kinderspiele und Kleinspielzeug <br>\n' +
+            '-Brotdosen und Trinkflaschen <br>\n' +
+            '-Kuscheltiere',
+    },
+    {
+        image: { url: '/images/sortiment/Dekoration.jpg', alt: 'Schreibwaren' },
+        headline: 'Dekoration',
+        text: 'Schöne Dekorationen für Dein Zuhause<br><br>\n' +
+            '-Kerzen / Kerzengläser<br>\n' +
+            '-Matallfiguren <br>\n' +
+            '-Holz - und Metallhäuschen',
+    },
+    {
+        image: { url: '/images/sortiment/Candybar.jpg', alt: 'Bastelartikel' },
+        headline: 'Candy Bar',
+        text: 'Buntetüten oder Kleinsüßigkeiten für die Nachkatzen<br><br>\n' +
+            '-Weingummi <br>\n' +
+            '-Lollies <br>\n' +
+            '-SchaumZucker/ Mäusespeck',
+    }
+];
+
+const presentIdeas = {
+    layout: 'gallery',
+    content: {
+        headline: 'Geschenk Ideen',
+        description: 'Ein besonderer Anlass ist mehr als nur ein Datum – er ist die perfekte Gelegenheit, Eindruck zu hinterlassen. Wir Verwandeln aus deiner Idee den Hingucker eines jedes Geschenketisches.'
+    },
+    images: [
+        { url: '/images/sortiment/dusche1.jpg', alt: 'dusche1' },
+        { url: '/images/sortiment/dusche2.jpg', alt: 'dusche2' },
+        { url: '/images/sortiment/dusche3.jpg', alt: 'dusche3' },
+    ],
+};
 ---
 
 <Layout>
+    <Hero block={hero} />
+    <h2 class="text-4xl font-bold text-center mb-10">Sortiment und Produkte</h2>
+    <p class="text-l px-15 text-center max-w-[900px] m-auto">Unser Laden bietet eine vielzahl an Produkten, ob Kreativware, Geschenkideen oder einfach nur zum Stöbern.
+        Die speziell gewählten Produkte unseres Sortiments bieten Qualität und Modernität.</p>
+    <CardGrid items={cards} />
+    <FeatureBlock block={resin} />
+    <CardGrid items={cards2} />
+    <FeatureBlock block={specialDeco} />
+    <CardGrid items={cards3} />
+    <FeatureBlock block={presentIdeas} />
 </Layout>
