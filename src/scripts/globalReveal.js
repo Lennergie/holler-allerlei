@@ -63,8 +63,8 @@ export function animateContents() {
             scrollTrigger: {
             trigger: el,
             start: 'top 75%',
-            end: 'bottom 75%',
-            scrub: 3,
+            end: 'center 75%',
+            scrub: 3
             }
         })
     })

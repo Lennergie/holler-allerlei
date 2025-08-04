@@ -20,9 +20,9 @@ export interface Props {
 
 const { block } = Astro.props;
 ---
-<section class="mainWrapper">
+<section class="mainWrapper contentReveal">
     <div   class={[
-        'rounded-[20px] shadow bg-white grid p-5 lg:p-20',
+        'rounded-lg shadow bg-white grid p-5 lg:p-20',
         block.layout === 'horizontal' && 'md:grid-cols-2 items-center',
         block.layout === 'gallery' && 'md:grid-cols-2 lg:grid-cols-2 items-start',
         block.layout === 'links' && 'md:grid-cols-2 lg:grid-cols-4 items-start',

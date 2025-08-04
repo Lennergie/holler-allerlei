@@ -1,13 +1,23 @@
 ---
+import TheButton from "./TheButton.vue";
+
 // src/components/LocationMap.astro
 ---
 
-<div class="relative mb-[-180px] z-50 mt-20">
-    <h2 class="text-4xl font-semibold text-center mb-6">So finden Sie uns</h2>
-    <div class="flex items-center justify-center w-[80%] m-auto">
+<div class="relative z-50 mt-20 rounded-lg mb-20 contentReveal">
+    <h2 class="text-4xl font-semibold text-center mb-6">So findet Ihr uns</h2>
+    <div class="flex flex-col items-center justify-center w-[80%] m-auto">
         <img src="/images/map.png" alt="holler Allerlei Standort">
+        <div class="bg-white w-full p-5 overflow-hidden flex flex-col justify-center items-center">
+            <p class="mt-4 text-center text-lg text-black max-w-2xl mx-auto">
+                Unser Laden befindet sich im Herzen von Holle, nur wenige Gehminuten vom Rathaus entfernt. Parkplätze sind direkt vor dem Geschäft verfügbar.
+            </p>
+            <a href="/kontakt" class="block w-[110px]">
+                <TheButton class="mt-5 mb-3">
+                    Kontakt
+                </TheButton>
+            </a>
+        </div>
+
     </div>
-    <p class="mt-4 text-center text-lg text-white max-w-2xl mx-auto">
-        Unser Laden befindet sich im Herzen von Holle, nur wenige Gehminuten vom Rathaus entfernt. Parkplätze sind direkt vor dem Geschäft verfügbar.
-    </p>
 </div>

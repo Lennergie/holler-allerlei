@@ -14,7 +14,7 @@ export interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="mainWrapper flex gap-5 flex-col lg:flex-row">
+<section class="mainWrapper flex gap-5 flex-col lg:flex-row contentReveal">
         {items.slice(0, 6).map((item, index) => (
                 <div class="flex flex-col rounded overflow-hidden shadow group" key={index}>
                     <img

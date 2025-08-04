@@ -38,7 +38,7 @@
         <a class="menuItem" href="/sortiment">Sortiment</a>
         <a class="menuItem" href="/selbstgemachtes">Selbstgemachtes</a>
         <a class="menuItem" href="/ueberUns">Über uns</a>
-        <a class="mt-10 lg:mt-0 lg:ml-10" href="/kontakt">
+        <a class="mt-10 lg:mt-0 lg:ml-5" href="/kontakt">
           <TheButton>Kontakt</TheButton>
         </a>
       </nav>

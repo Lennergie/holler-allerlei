@@ -4,9 +4,10 @@ import Hero from "../components/Hero.astro";
 import CategoryIcons from "../components/CategoryIcons.astro";
 import LocationMap from "../components/LocationMap.astro";
 import FeatureBlock from "../components/FeatureBlock.astro"
-import CardGrid from '../components/CardGrid.astro';
+//import CardGrid from '../components/CardGrid.astro';
 import News from '../components/News.astro';
 
+/*
 const cards = [
     {
         image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
@@ -24,6 +25,7 @@ const cards = [
         text: 'This is the description for card 1. This is the description for card 1.',
     }
 ];
+ */
 
 const holzBlock = {
     layout: 'horizontal',
@@ -92,13 +94,17 @@ const feenBlock = {
     ],
 };
 ---
+<!--
+    <CardGrid items={cards} />
+-->
+
 
 <Layout>
     <Hero />
     <CategoryIcons />
     <News />
-    <CardGrid items={cards} />
     <FeatureBlock block={holzBlock} />
     <FeatureBlock block={linksBlock} />
     <FeatureBlock block={feenBlock} />
+    <LocationMap />
 </Layout>

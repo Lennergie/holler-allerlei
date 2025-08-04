@@ -12,15 +12,23 @@
 @font-face {
     font-family: "ExpletusSans";
     src: url('/font/ExpletusSans.woff') format('woff');
-    font-weight: normal;
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Josefin";
+    font-family: "Lexend";
     src: url('/font/Lexend.woff') format('woff');
-    font-weight: normal;
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LexendExtraLight";
+    src: url('/font/Lexend-ExtraLight.woff') format('woff');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
@@ -30,7 +38,8 @@ html, body{
     margin: 0;
     width: 100%;
     background: var(--mainBg);
-    font-family: "Lexend", "Arial", sans-serif;
+    font-family: "LexendExtraLight", "Arial", sans-serif;
+    font-weight: 200;
     color: var(--grey);
     overflow-x: hidden;
 }
