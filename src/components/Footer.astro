@@ -1,0 +1,40 @@
+---
+// src/components/Footer.astro
+import LocationMap from "./LocationMap.astro";
+---
+<footer>
+    <LocationMap />
+    <div class="relative px-6 pb-10 text-lg bg-[var(--grey)] text-white z-30 pt-[250px]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+                <img
+                        src="/Logo_white.png"
+                        alt="Holler Allerlei"
+                        class="w-[140px] mb-5"
+                />
+                <p>Ihr Laden für Wolle, Handarbeiten, Dekoration und vieles mehr. Mit Liebe zum Detail und persönlicher Beratung.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#"><img src="/fb.png" alt="Facebook" class="w-10" /></a>
+                    <a href="#"><img src="/insta.png" alt="Instagram" class="w-10" /></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2 text-white!">Schnelllinks</h4>
+                <ul class="space-y-1">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sortiment</a></li>
+                    <li><a href="#">Selbstgemachtes</a></li>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2 text-white!">Kontakt</h4>
+                <p>Marktstraße 19<br />31188 Holle</p>
+                <p>Tel: 05062 18 30<br />E-Mail: hollerallerlei@email.de</p>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-6 border-t pt-4">© 2025 Holler & Allerlei. Alle Rechte vorbehalten.</div>
+    </div>
+</footer>
+

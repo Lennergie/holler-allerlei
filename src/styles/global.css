@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import 'lenis/dist/lenis.css';
+
+
+:root{
+    --mainBg: #FFFAF8;
+    --secondBg: #293C4F;
+    --white: #ffffff;
+    --grey: #3c3c3b;
+}
+
+@font-face {
+    font-family: "ExpletusSans";
+    src: url('/font/ExpletusSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Josefin";
+    src: url('/font/Lexend.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    background: var(--mainBg);
+    font-family: "Lexend", "Arial", sans-serif;
+    color: var(--grey);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "ExpletusSans", "Arial", sans-serif;
+    color: var(--grey);
+}
+
+button, button span {
+    font-family: "ExpletusSans", "Arial", sans-serif;
+    font-size: 24px;
+    position: relative;
+}
+
+/* animation stuff */
+
+.line {
+    background: linear-gradient(to right,
+            rgb(255, 255, 255) 50%,
+            rgba(37, 37, 37, 0) 50%);
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.animateContents{
+    opacity: 0;
+}
+
+button:focus {
+    outline: var(--mainBg);
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+.faqContent h2{
+    font-size: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.sublist {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.mainWrapper{
+    width: calc(100% - 60px);
+    padding: 75px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 1000px) {
+    .mainWrapper{
+        width: calc(100% - 20px);
+        padding: 5px;
+        margin: 0 auto;
+        margin-top: 75px;
+    }
+}

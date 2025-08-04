@@ -1,0 +1,138 @@
+---
+import TheButton from './TheButton.vue';
+// FeatureBlock.astro
+export interface Props {
+    block: {
+        layout: 'horizontal' | 'gallery' | 'links';
+        content?: {
+            headline?: string;
+            description?: string;
+            buttonText?: string;
+            buttonLink?: string;
+        };
+        images?: {
+            url: string;
+            alt?: string;
+            link?: string;
+        }[];
+    };
+}
+
+const { block } = Astro.props;
+---
+<section class="mainWrapper">
+    <div   class={[
+        'rounded-[20px] shadow bg-white grid p-5 lg:p-20',
+        block.layout === 'horizontal' && 'md:grid-cols-2 items-center',
+        block.layout === 'gallery' && 'md:grid-cols-2 lg:grid-cols-2 items-start',
+        block.layout === 'links' && 'md:grid-cols-2 lg:grid-cols-4 items-start',
+    ]
+        .filter(Boolean)
+        .join(' ')}
+    >
+        <div class="space-y-2 mb-10 lg:mb-0 flex items-start justify-center flex-col h-full">
+            <h2 class="text-4xl font-semibold">{block.content?.headline || 'Kein Titel'}</h2>
+            <p class="text-gray-700 my-10 text-xl">{block.content?.description}</p>
+            {block.content?.buttonText && (
+                    <a
+                            href={block.content.buttonLink || '#'}
+                    >
+                        <TheButton>
+                            {block.content.buttonText}
+                        </TheButton>
+                    </a>
+            )}
+        </div>
+
+        {block.layout === 'horizontal' && block.images?.[0]?.url && (
+                <div class="flex justify-center items-center">
+                    <img
+                            src={block.images[0].url}
+                            alt={block.images[0].alt || ''}
+                            class="max-h-96 object-contain"
+                    />
+                </div>
+        )}
+
+        {block.layout === 'gallery' && (
+                <div class="grid grid-cols-2 gap-4">
+                    {block.images?.map((image, index) => (
+                            <div class="aspect-square overflow-hidden rounded" key={index}>
+                                {image.link ? (
+                                        <a href={image.link}>
+                                            <img
+                                                    src={image.url}
+                                                    alt={image.alt || ''}
+                                                    class="w-full h-full object-cover"
+                                            />
+                                        </a>
+                                ) : (
+                                        <img
+                                                src={image.url}
+                                                alt={image.alt || ''}
+                                                class="w-full h-full object-cover"
+                                        />
+                                )}
+                            </div>
+                    ))}
+                </div>
+        )}
+
+        {block.layout === 'links' && (
+                <div class="col-start-1 lg:col-start-2 lg:col-end-5 grid grid-cols-3 grid-rows-2 gap-4">
+                    <div class="relative overflow-hidden rounded col-start-1 col-end-2 row-start-1 row-end-3">
+                        <a href={block.images[0].link}>
+                            <img
+                                    src={block.images[0].url}
+                                    alt={block.images[0].alt || ''}
+                                    class="w-full h-full object-cover brightness-50"
+                            />
+                            <div class="absolute bottom-2 left-2">
+                                <h3 class="text-sm lg:text-2xl font-semibold text-white!">{block.images[0].headline}</h3>
+                                <p class="hidden lg:block text-xl text-white">{block.images[0].text}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="relative overflow-hidden rounded col-start-2 col-end-3 row-start-1 row-end-2">
+                        <a href={block.images[1].link}>
+                            <img
+                                    src={block.images[1].url}
+                                    alt={block.images[1].alt || ''}
+                                    class="w-full h-full object-cover brightness-50"
+                            />
+                            <div class="absolute bottom-2 left-2">
+                                <h3 class="text-sm lg:text-2xl font-semibold text-white!">{block.images[1].headline}</h3>
+                                <p class="hidden lg:block text-xl text-white">{block.images[1].text}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="relative overflow-hidden rounded col-start-2 col-end-3 row-start-2 row-end-3">
+                        <a href={block.images[2].link}>
+                            <img
+                                    src={block.images[2].url}
+                                    alt={block.images[2].alt || ''}
+                                    class="w-full h-full object-cover brightness-50"
+                            />
+                            <div class="absolute bottom-2 left-2">
+                                <h3 class="text-sm lg:text-2xl font-semibold text-white!">{block.images[2].headline}</h3>
+                                <p class="hidden lg:block text-xl text-white">{block.images[2].text}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="relative overflow-hidden rounded col-start-3 col-end-4 row-start-1 row-end-3">
+                        <a href={block.images[3].link}>
+                            <img
+                                    src={block.images[3].url}
+                                    alt={block.images[3].alt || ''}
+                                    class="w-full h-full object-cover brightness-50"
+                            />
+                            <div class="absolute bottom-2 left-2">
+                                <h3 class="text-sm lg:text-2xl font-semibold text-white!">{block.images[3].headline}</h3>
+                                <p class="hidden lg:block text-xl text-white">{block.images[3].text}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+        )}
+    </div>
+</section>

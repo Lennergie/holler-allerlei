@@ -1,0 +1,104 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import CategoryIcons from "../components/CategoryIcons.astro";
+import LocationMap from "../components/LocationMap.astro";
+import FeatureBlock from "../components/FeatureBlock.astro"
+import CardGrid from '../components/CardGrid.astro';
+import News from '../components/News.astro';
+
+const cards = [
+    {
+        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
+        headline: 'Card Title 1',
+        text: 'This is the description for card 1. This is the description for card 1.',
+    },
+    {
+        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
+        headline: 'Card Title 1',
+        text: 'This is the description for card 1. This is the description for card 1.',
+    },
+    {
+        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
+        headline: 'Card Title 1',
+        text: 'This is the description for card 1. This is the description for card 1.',
+    }
+];
+
+const holzBlock = {
+    layout: 'horizontal',
+    content: {
+        headline: 'Handgefertigte Holzartikel',
+        description:
+            'Unsere Holzprodukte sind Einzelstücke. Sie werden aus diversen Holzarten und -teilen gefertigt, alles in Michaels hauseigenen Werkstatt.',
+        buttonText: 'Entdecken',
+        buttonLink: '/holzprodukte',
+    },
+    images: [
+        {
+            url: '/images/micha.png',
+            alt: 'MG Design Logo',
+        },
+    ],
+};
+
+/*
+const servicesBlock = {
+    layout: 'gallery',
+    content: {
+        headline: 'Service vor Ort!',
+        description: 'Neben unserem umfangreichen Sortiment bieten wir dir auch verschiedene Dienstleistungen an, die deinen Alltag erleichtern.',
+
+    },
+    images: [
+        { url: '/images/micha.png', alt: 'Resin Dekor 1' },
+        { url: '/images/micha.png', alt: 'Resin Dekor 2' },
+        { url: '/images/micha.png', alt: 'Resin Dekor 3' },
+    ],
+};
+*/
+
+const linksBlock = {
+    layout: 'links',
+    content: {
+        headline: 'Links!',
+        description: 'LINKS.',
+
+    },
+    images: [
+        { url: '/images/paketshop.png', alt: 'Resin Dekor 1', headline: 'Resin Dekor 1', text: 'REsin' },
+        { url: '/images/aenderungsschneiderei.png', alt: 'Resin Dekor 2', headline: 'Resin Dekor 1', text: 'REsin' },
+        { url: '/images/schuhster.png', alt: 'Resin Dekor 3', headline: 'Resin Dekor 1', text: 'REsin' },
+        { url: '/images/reinigung.png', alt: 'Resin Dekor 3', headline: 'Resin Dekor 1', text: 'REsin' },
+    ],
+};
+
+const feenBlock = {
+    layout: 'horizontal',
+    content: {
+        headline: 'Feenzauber näht für Euch',
+        description:
+            'Wir nähen für euch selbst – kreativ und mit viel Liebe zum Detail. \n' +
+            'Ob Abwaschtücher, Körnerkissen oder ein kuscheliger Rundschal: \n' +
+            'Bei uns findet ihr eigene Kreationen und bekommt Gehör für individuelle Wünsche.',
+        buttonText: 'Entdecken',
+        buttonLink: '/feenzauber',
+    },
+    images: [
+        {
+            url: '/images/feenzauber.png',
+            alt: 'Feenzauber Holler Allerlei',
+        },
+    ],
+};
+---
+
+<Layout>
+    <Hero />
+    <CategoryIcons />
+    <News />
+    <CardGrid items={cards} />
+    <FeatureBlock block={holzBlock} />
+    <FeatureBlock block={linksBlock} />
+    <FeatureBlock block={feenBlock} />
+</Layout>

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        // see this issue https://github.com/withastro/language-tools/issues/642#issuecomment-2612193894
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "plugins": [
+            {
+                "name": "@astrojs/ts-plugin"
+            }
+        ],
+    },
+    "exclude": ["dist"],
+    "extends": "astro/tsconfigs/strictest",
+    "include": [".astro/types.d.ts", "**/*"]
+}
