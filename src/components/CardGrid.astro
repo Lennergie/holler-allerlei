@@ -16,7 +16,7 @@ const { items } = Astro.props;
 
 <section class="mainWrapper flex gap-5 flex-col lg:flex-row contentReveal">
         {items.slice(0, 6).map((item, index) => (
-                <div class="flex flex-col rounded-lg overflow-hidden shadow group" key={index}>
+                <div class="flex flex-col rounded-lg overflow-hidden shadow group w-1/3" key={index}>
                     <img
                             src={item.image.url}
                             alt={item.image.alt || ''}

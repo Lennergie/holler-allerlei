@@ -1,35 +1,130 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import CardGrid from "../components/CardGrid.astro";
+import FeatureBlock from "../components/FeatureBlock.astro";
+import TheButton from "@/components/TheButton.vue";
 
 const hero = {
-    image: "/images/hero.jpg",
-    h1: "Entdecken statt Klicken!",
-    h2: "Kreativ mit Herz & Hand:",
-    p: "Handgemachtes, Schönes & Persönliches – direkt aus der Region."
+    image: "/images/selbstgemachtes/hero.jpg",
+    h1: "Selbstgemachtes",
+    h2: "",
+    p: "Mit viel Liebe zum Detail: Unsere Hauseigenen Kreativwerkstätten erschaffen ständig neue Ideen"
 }
 
-/*
 const cards = [
     {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
+        image: { url: '/images/selbstgemachtes/Koernerkissen.jpg', alt: 'Image 1' },
+        headline: 'Körnerkissen',
+        text: 'Wohltuende Körnerkissen für Entspannung und\n' +
+            'Schmerzlinderung. Mit verschiedenen\n' +
+            'Mustern und Größen.',
     },
     {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
+        image: { url: '/images/selbstgemachtes/Tuecher.jpg', alt: 'Image 1' },
+        headline: 'Tücher',
+        text: 'Handgenähte Tücher aus hochwertigen Stoffen. Perfekt als Accessoire oder praktischer Begleiter im Alltag.',
     },
     {
-        image: { url: '/images/Dienstleistungen.png', alt: 'Image 1' },
-        headline: 'Card Title 1',
-        text: 'This is the description for card 1. This is the description for card 1.',
-    }
+        image: { url: '/images/selbstgemachtes/Leseknochen.jpg', alt: 'Image 1' },
+        headline: 'Leseknochen',
+        text: 'Ergonomische Lesekissen für entspanntes Lesen\n' +
+            'im Bett oder auf dem Sofa. Mit verschiedenen\n' +
+            'Bezügen und Sprüchen.',
+    },
 ];
- */
+const cards2 = [
+    {
+        image: { url: '/images/selbstgemachtes/Abwaschtuecher.jpg', alt: 'Image 1' },
+        headline: 'Abwaschtücher',
+        text: 'Dekorative und funktionale Abwaschtücher in\n' +
+            'verschiedenen Größen und Designs.\n' +
+            'Handgenäht mit viel Liebe zum Detail.',
+    },
+    {
+        image: { url: '/images/selbstgemachtes/Rundschal.jpg', alt: 'Image 1' },
+        headline: 'Rundschal',
+        text: 'Selbstgenähte Schals in Einheitsgröße mit\n' +
+            'verschiedenen Mustern und Designs.\n',
+    },
+    {
+        image: { url: '/images/selbstgemachtes/Tuecher.jpg', alt: 'Image 1' },
+        headline: 'Kissen',
+        text: 'Dekorative Kissen in verschiedenen Größen \n' +
+            'und Designs. Mit unterschiedlichen Stoffen und Sprüchen.',
+    }
+]
+
+const resinAnd = {
+    layout: 'gallery',
+    content: {
+        headline: 'Resin und Gießen',
+        description: 'Tauche in die Welt des Resins. Jedes Stück wird mit Liebe und Präzision gefertigt wird. \n' +
+            '\n' +
+            'Vom ersten Gießen bis zum finalen Schliff entsteht jedes Stück in sorgfältiger Handarbeit, sodass du ein echtes Einzelstück erhältst.'
+    },
+    images: [
+        { url: '/images/selbstgemachtes/Gießen1.jpg', alt: 'Gießen1' },
+        { url: '/images/selbstgemachtes/Gießen2.jpg', alt: 'Gießen1' },
+        { url: '/images/selbstgemachtes/Gießen3.jpg', alt: 'Gießen1' },
+    ],
+};
+
+const cards3 = [
+    {
+        image: { url: '/images/selbstgemachtes/Schultueten.jpg', alt: 'Image 1' },
+        headline: 'Schultüten',
+        text: 'Der erste Schultag ist ein ganz besonderer Tag –  handgefertigte Schultüten die nicht nur mit Süßigkeiten, sondern auch mit Herz gefüllt sind.',
+    },
+    {
+        image: { url: '/images/selbstgemachtes/Karten.jpg', alt: 'Image 1' },
+        headline: 'Karten',
+        text: 'Eine selbstgemachte Karte ist mehr als nur Papier – sie ist ein kleines Kunstwerk, das von Herzen kommt.'
+    },
+]
+
+const plottern = {
+    layout: 'gallery',
+    content: {
+        headline: 'Plottern',
+        description: 'Wir glauben: Plottern ist mehr als Technik – es ist eine liebevolle Handarbeit, bei der ein Maschinenwerkstück zum Unikat wird.\n' +
+            '\n' +
+            'Wir fühlen mit jedem Schnitt und schenken jedem Projekt unsere ganze Sorgfalt. T‑Shirts, Gläser, Kerzen und mehr – mit Liebe und Textilfolie veredelt.\n' +
+            '\n'
+    },
+    images: [
+        { url: '/images/selbstgemachtes/Plottern1.jpg', alt: 'Plottern1' },
+        { url: '/images/selbstgemachtes/Plottern2.jpg', alt: 'Plottern1' },
+        { url: '/images/selbstgemachtes/Plottern3.jpg', alt: 'Plottern1' },
+    ],
+};
 ---
 
 <Layout>
     <Hero block={hero} />
+    <h2 class="text-4xl font-bold text-center mb-10">Handgefertigte Unikate</h2>
+    <p class="text-l px-15 text-center max-w-[900px] m-auto mb-20">In unseren eigenen Kreativwerkstätten entstehen mit viel Liebe und Sorgfalt einzigartige Produkte. Jedes Stück
+        wird individuell gefertigt und spiegelt unsere Leidenschaft für das Kreativhandwerk wieder.</p>
+    <h2 class="text-4xl font-bold text-center mb-10">Holzprodukte von MG Design</h2>
+    <p class="text-l px-15 text-center max-w-[900px] m-auto my-50">Eine ausgewählte Sammlung von Holprodukten ist in Arbeit.</p>
+    <h2 class="text-4xl font-bold text-center mb-10">Nähprodukte von Feen Zauber</h2>
+    <CardGrid items={cards} />
+    <CardGrid items={cards2} />
+    <FeatureBlock block={resinAnd} />
+    <h2 class="text-4xl font-bold text-center mb-10">Selbstgebasteltes</h2>
+    <CardGrid items={cards3} />
+    <FeatureBlock block={plottern} />
+    <div class="flex flex-col justify-center items-center mt-10 mb-30">
+        <h2 class="text-3xl font-bold text-center mb-2">Individuelle Anfragen</h2>
+        <p class="text-l px-15 text-center max-w-[900px] m-auto mb-6">
+            Du hast eine besondere Idee oder wünschst dir ein <br>
+            individuelles Produkt? Sprich uns gerne an - wir setzen Deine <br>
+            Vorstellungen in die Tat um.
+        </p>
+        <a href="/kontakt">
+            <TheButton>
+                Kontakt aufnehmen
+            </TheButton>
+        </a>
+    </div>
 </Layout>
