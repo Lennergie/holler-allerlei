@@ -56,9 +56,9 @@ export function animateContents() {
     const content = document.querySelectorAll('.contentReveal')
 
     content.forEach((el) => {
-        gsap.set(el, { opacity: 0 })
+        gsap.set(el, { translateY: 50 })
         gsap.to(el, {
-            opacity: 1,
+            translateY: 0,
             ease: 'none',
             scrollTrigger: {
             trigger: el,
