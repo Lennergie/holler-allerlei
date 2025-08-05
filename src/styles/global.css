@@ -53,6 +53,10 @@ html, body{
     overflow-x: hidden;
 }
 
+a{
+    font-family: "LexendExtraLight", "Arial", sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: "ExpletusSansBold", "Arial", sans-serif;
     font-weight: bold;
@@ -64,6 +68,7 @@ button, button span {
     font-size: 24px;
     position: relative;
 }
+
 
 /* animation stuff */
 

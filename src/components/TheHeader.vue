@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed w-full px-3 py-1 lg:px-10 lg:py-3 z-100 bg-[var(--mainBg)] shadow"
+    class="fixed w-full px-3 py-1 lg:px-10 lg:py-1 z-100 bg-[var(--mainBg)] shadow"
   >
     <div class="block lg:hidden flex justify-between items-center w-full h-[60px]">
       <a href="/" class="z-100">
@@ -31,7 +31,7 @@
         <img
           :src="'./Logo_black.png'"
           alt="Holler Allerlei"
-          class="w-[200px] hover:scale-110 transition-transform"
+          class="w-[250px] hover:translate-x-1 transition-transform duration-500 will-change-transform"
         />
       </a>
       <nav class="flex justify-between items-center gap-5">
@@ -120,8 +120,6 @@ onMounted(() => {
 
 <style scoped>
 .menuItem {
-  font-family: "ExpletusSans";
-  font-size: 20px;
   display: inline-block;
   position: relative;
 }
@@ -131,10 +129,10 @@ onMounted(() => {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #AB577A;
   transition: transform 0.25s ease-out;
 }
 
@@ -148,10 +146,5 @@ onMounted(() => {
 
 .menuItem:hover::after {
   transform-origin: bottom left;
-}
-@media screen and (max-width: 1024px) {
-  .menuItem {
-    font-size: 35px;
-  }
 }
 </style>
