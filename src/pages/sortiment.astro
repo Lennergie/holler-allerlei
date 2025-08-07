@@ -81,6 +81,7 @@ const cards2 = [
 
 const specialDeco = {
     layout: 'gallery',
+    id: 'holzprodukte',
     content: {
         headline: 'Spezielle Dekoartikel',
         description: 'Holz trifft Metall: eine kleine und spezielle Dekoreihe die den rustikalen und modernen Touch vereint.\n' +
@@ -137,13 +138,13 @@ const presentIdeas = {
 
 <Layout>
     <Hero block={hero} />
-    <h2 class="text-4xl font-bold text-center mb-10">Sortiment und Produkte</h2>
+    <h2 id="" class="text-4xl font-bold text-center mb-10">Sortiment und Produkte</h2>
     <p class="text-l px-15 text-center max-w-[900px] m-auto">Unser Laden bietet eine vielzahl an Produkten, ob Kreativware, Geschenkideen oder einfach nur zum Stöbern.
         Die speziell gewählten Produkte unseres Sortiments bieten Qualität und Modernität.</p>
     <CardGrid items={cards} />
     <FeatureBlock block={resin} />
-    <CardGrid items={cards2} />
+    <CardGrid id="schulartikel" items={cards2} />
     <FeatureBlock block={specialDeco} />
-    <CardGrid items={cards3} />
+    <CardGrid id="dekoartikel" items={cards3} />
     <FeatureBlock block={presentIdeas} />
 </Layout>

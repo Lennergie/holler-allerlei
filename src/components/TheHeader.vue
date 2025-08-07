@@ -122,6 +122,7 @@ onMounted(() => {
 .menuItem {
   display: inline-block;
   position: relative;
+  font-family: "Lexend", "Arial", sans-serif;
 }
 
 .menuItem::after {
