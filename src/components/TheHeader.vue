@@ -5,7 +5,7 @@
     <div class="block lg:hidden flex justify-between items-center w-full h-[60px]">
       <a href="/" class="z-100">
         <img
-          :src="'./Logo_black.png'"
+          :src="'/Logo_black.png'"
           alt="Hollder Allerlei"
           class="w-[140px]"
         />
