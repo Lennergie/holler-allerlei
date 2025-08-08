@@ -18,9 +18,9 @@
       <nav
         class="mobileNav fixed top-0 left-0 w-full h-screen flex justify-center items-center flex-col gap-3 bg-[var(--mainBg)]"
       >
-        <a class="menuItem" href="/sortiment">Sortiment</a>
-        <a class="menuItem" href="/selbstgemachtes">Selbstgemachtes</a>
-        <a class="menuItem" href="/ueberUns">Über uns</a>
+        <a class="menuItem text-2xl lg:text-[unset]" href="/sortiment">Sortiment</a>
+        <a class="menuItem text-2xl lg:text-[unset]" href="/selbstgemachtes">Selbstgemachtes</a>
+        <a class="menuItem text-2xl lg:text-[unset]" href="/ueberUns">Über uns</a>
         <a class="mt-10 lg:mt-0 lg:ml-10" href="/kontakt">
           <TheButton>Kontakt</TheButton>
         </a>
@@ -29,9 +29,9 @@
     <div class="hidden lg:flex flex justify-between items-center w-full">
       <a href="/">
         <img
-          :src="'./Logo_black.png'"
+          :src="'/Logo_black.png'"
           alt="Holler Allerlei"
-          class="w-[250px] hover:translate-x-1 transition-transform duration-500 will-change-transform"
+          class="w-[250px]"
         />
       </a>
       <nav class="flex justify-between items-center gap-5">
