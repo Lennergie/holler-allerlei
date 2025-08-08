@@ -130,7 +130,7 @@ onMounted(() => {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 1px;
+  height: 2px;
   bottom: 0;
   left: 0;
   background-color: #AB577A;

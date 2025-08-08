@@ -25,7 +25,7 @@ const { items, id } = Astro.props;
                             alt={item.image.alt || ''}
                             class="w-full h-64 object-cover transition-transform duration-300 scale-105 group-hover:scale-108"
                     />
-                    <div class="p-6 bg-white flex flex-col gap-2 h-[180px]">
+                    <div class="p-6 bg-white flex flex-col gap-2 min-h-[180px]">
                         <h3 class="text-2xl font-semibold">{item.headline}</h3>
                         <p class="text-base" set:html={item.text}></p>
                     </div>
