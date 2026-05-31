@@ -50,7 +50,11 @@ const { block } = Astro.props;
                     <img
                             src={block.images[0].url}
                             alt={block.images[0].alt || ''}
-                            class="object-contain"
+                            width="334"
+                            height="250"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-auto object-contain"
                     />
                 </div>
         )}
@@ -61,6 +65,10 @@ const { block } = Astro.props;
                         <img
                                 src={block.images[0].url}
                                 alt={block.images[0].alt || ''}
+                                width="270"
+                                height="170"
+                                loading="lazy"
+                                decoding="async"
                                 class="w-full h-full object-cover"
                         />
                     </div>
@@ -68,6 +76,10 @@ const { block } = Astro.props;
                         <img
                                 src={block.images[1].url}
                                 alt={block.images[1].alt || ''}
+                                width="270"
+                                height="170"
+                                loading="lazy"
+                                decoding="async"
                                 class="w-full h-full object-cover"
                         />
                     </div>
@@ -75,6 +87,10 @@ const { block } = Astro.props;
                         <img
                                 src={block.images[2].url}
                                 alt={block.images[2].alt || ''}
+                                width="276"
+                                height="360"
+                                loading="lazy"
+                                decoding="async"
                                 class="w-full h-full object-cover"
                         />
                     </div>
@@ -88,6 +104,10 @@ const { block } = Astro.props;
                             <img
                                     src={block.images[0].url}
                                     alt={block.images[0].alt || ''}
+                                    width="250"
+                                    height="388"
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover brightness-50"
                             />
                             <div class="absolute bottom-2 left-2">
@@ -101,6 +121,10 @@ const { block } = Astro.props;
                             <img
                                     src={block.images[1].url}
                                     alt={block.images[1].alt || ''}
+                                    width="254"
+                                    height="171"
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover brightness-50"
                             />
                             <div class="absolute bottom-2 left-2">
@@ -114,6 +138,10 @@ const { block } = Astro.props;
                             <img
                                     src={block.images[2].url}
                                     alt={block.images[2].alt || ''}
+                                    width="256"
+                                    height="171"
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover brightness-50"
                             />
                             <div class="absolute bottom-2 left-2">
@@ -127,6 +155,10 @@ const { block } = Astro.props;
                             <img
                                     src={block.images[3].url}
                                     alt={block.images[3].alt || ''}
+                                    width="250"
+                                    height="389"
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover brightness-50"
                             />
                             <div class="absolute bottom-2 left-2">

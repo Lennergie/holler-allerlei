@@ -5,9 +5,11 @@
     <div class="block lg:hidden flex justify-between items-center w-full h-[60px]">
       <a href="/" class="z-100">
         <img
-          :src="'/Logo_black.png'"
-          alt="Hollder Allerlei"
-          class="w-[140px]"
+          :src="'/Logo_black.webp'"
+          alt="Holler Allerlei"
+          width="2094"
+          height="532"
+          class="w-[140px] h-auto"
         />
       </a>
       <div class="w-[40px] flex center items-ceter gap-2 flex-col navBtn z-100">
@@ -16,7 +18,8 @@
         <span class="w-full block h-[2px] bg-black"></span>
       </div>
       <nav
-        class="mobileNav fixed top-0 left-0 w-full h-screen flex justify-center items-center flex-col gap-3 bg-[var(--mainBg)]"
+        class="mobileNav fixed left-0 w-full h-screen flex justify-center items-center flex-col gap-3 bg-[var(--mainBg)]"
+        style="top: -100%"
       >
         <a class="menuItem text-2xl lg:text-[unset]" href="/sortiment">Sortiment</a>
         <a class="menuItem text-2xl lg:text-[unset]" href="/selbstgemachtes">Selbstgemachtes</a>
@@ -29,9 +32,11 @@
     <div class="hidden lg:flex flex justify-between items-center w-full">
       <a href="/">
         <img
-          :src="'/Logo_black.png'"
+          :src="'/Logo_black.webp'"
           alt="Holler Allerlei"
-          class="w-[250px]"
+          width="2094"
+          height="532"
+          class="w-[250px] h-auto"
         />
       </a>
       <nav class="flex justify-between items-center gap-5">
@@ -59,10 +64,10 @@ onMounted(() => {
 
   const tl = gsap.timeline({ reversed: true });
 
-  tl.from("nav.mobileNav", {
+  tl.to("nav.mobileNav", {
     duration: 0.6,
     ease: "power3.inOut",
-    top: "-100%",
+    top: "0%",
   })
     .from("nav.mobileNav a", {
       duration: 0.3,

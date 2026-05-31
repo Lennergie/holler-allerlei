@@ -23,6 +23,10 @@ const { items, id } = Astro.props;
                     <img
                             src={item.image.url}
                             alt={item.image.alt || ''}
+                            width="394"
+                            height="192"
+                            loading="lazy"
+                            decoding="async"
                             class="w-full h-64 object-cover transition-transform duration-300 scale-105 group-hover:scale-108"
                     />
                     <div class="p-6 bg-white flex flex-col gap-2 min-h-[180px]">

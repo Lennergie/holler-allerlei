@@ -7,7 +7,7 @@ import FeatureBlock from "../components/FeatureBlock.astro"
 import News from '../components/News.astro';
 
 const hero = {
-    image: "/images/hero.jpg",
+    image: "/images/hero.webp",
     h1: "Entdecken statt Klicken!",
     h2: "Kreativ mit Herz & Hand:",
     p: "Handgemachtes, Schönes & Persönliches – direkt aus der Region."
@@ -24,7 +24,7 @@ const holzBlock = {
     },
     images: [
         {
-            url: '/images/micha.png',
+            url: '/images/micha.webp',
             alt: 'MG Design Logo',
         },
     ],
@@ -40,11 +40,11 @@ const linksBlock = {
 
     },
     images: [
-        { url: '/images/paketshop.png', alt: 'Paketshop', headline: 'Paketshop', text: 'Ausweis wenn eigenes Paket, Vollmacht von Paket Inhaber + eigener Ausweis' },
-        { url: '/images/aenderungsschneiderei.png', alt: 'Änderungsschneiderei', headline: 'Änderungsschneiderei', text: 'Was nicht passt wird \n' +
+        { url: '/images/paketshop.webp', alt: 'Paketshop', headline: 'Paketshop', text: 'Ausweis wenn eigenes Paket, Vollmacht von Paket Inhaber + eigener Ausweis' },
+        { url: '/images/aenderungsschneiderei.webp', alt: 'Änderungsschneiderei', headline: 'Änderungsschneiderei', text: 'Was nicht passt wird \n' +
                 'passend gemacht! ' },
-        { url: '/images/schuhster.png', alt: 'Schuster-Service', headline: 'Schuster-Service', text: 'Wir hauchen deinen kaputten Schuhen wieder Leben ein' },
-        { url: '/images/reinigung.png', alt: 'Reinigung', headline: 'Reinigung', text: 'Von Bettwäsche zu Tischdecken - das schaffen wir!' },
+        { url: '/images/schuhster.webp', alt: 'Schuster-Service', headline: 'Schuster-Service', text: 'Wir hauchen deinen kaputten Schuhen wieder Leben ein' },
+        { url: '/images/reinigung.webp', alt: 'Reinigung', headline: 'Reinigung', text: 'Von Bettwäsche zu Tischdecken - das schaffen wir!' },
     ],
 };
 
@@ -61,7 +61,7 @@ const feenBlock = {
     },
     images: [
         {
-            url: '/images/feenzauber.png',
+            url: '/images/feenzauber.webp',
             alt: 'Feenzauber Holler Allerlei',
         },
     ],
@@ -69,7 +69,7 @@ const feenBlock = {
 ---
 
 
-<Layout>
+<Layout title="Holler Allerlei" description="Dein Lieblingsladen in Holle: Handgemachtes, Kreativbedarf, Schulbedarf, Wolle, Dekoartikel und persönlicher Service seit 2009.">
     <Hero block={hero} />
     <CategoryIcons />
     <News />

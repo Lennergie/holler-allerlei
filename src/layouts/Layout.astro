@@ -3,6 +3,21 @@ import TheHeader from "../components/TheHeader.vue";
 import "./../styles/global.css";
 import ParticleBg from "@/components/ParticleBg.vue";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Holler Allerlei",
+  description = "Dein Lieblingsladen in Holle: Handgemachtes, Kreativbedarf, Schulbedarf, Wolle und persönlicher Service seit 2009.",
+  ogImage = "/Logo_black.webp",
+} = Astro.props;
+
+const pageTitle = title === "Holler Allerlei" ? title : `${title} | Holler Allerlei`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || "https://www.holler-allerlei.de");
 ---
 
 <script>
@@ -10,30 +25,103 @@ import Footer from "../components/Footer.astro";
   import { animateContents } from "../scripts/globalReveal";
   import gsap from "gsap";
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   initSmoothScrolling();
 
-  const animateLoader = () => {
-    gsap.to(".loading", {
-      duration: 0.8,
-      delay: 1,
-      ease: "power3.inOut",
-      top: "100%",
-    });
-  };
+  const showLoader = !sessionStorage.getItem("loaderShown");
+
+  if (showLoader) {
+    sessionStorage.setItem("loaderShown", "true");
+  }
 
   window.addEventListener("DOMContentLoaded", () => {
     animateContents();
-    animateLoader();
+
+    const loader = document.querySelector(".loading") as HTMLElement;
+    if (!loader) return;
+
+    if (showLoader && !prefersReducedMotion) {
+      gsap.to(loader, {
+        duration: 0.8,
+        delay: 1,
+        ease: "power3.inOut",
+        opacity: 0,
+        onComplete: () => {
+          loader.style.display = "none";
+        },
+      });
+    } else {
+      loader.style.display = "none";
+    }
   });
 </script>
 
 <html lang="de">
   <head>
-    <title>Holler Allerlei</title>
     <meta charset="UTF-8" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Holler Allerlei",
+      "description": "Lieblingsladen in Holle: Handgemachtes, Kreativbedarf, Schulbedarf, Wolle, Dekoartikel und persönlicher Service.",
+      "url": "https://www.holler-allerlei.de",
+      "telephone": "+4950621830",
+      "email": "holler.allerlei@email.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marktstraße 19",
+        "addressLocality": "Holle",
+        "postalCode": "31188",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "12:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+          "opens": "14:30",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "09:00",
+          "closes": "12:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/catringrassmueller/",
+        "https://www.instagram.com/hollerallerlei/"
+      ]
+    })} />
   </head>
   <body>
     <ParticleBg client:only="vue" style="z-index: 0; position: fixed;"/>
@@ -42,20 +130,18 @@ import Footer from "../components/Footer.astro";
       <slot />
     </div>
     <Footer style="z-index: 1; position: relative;" />
-    <div class="loading">
-      <img src="/Logo_black.png" alt="Holler Allerlei" class="w-[400px] max-w-3/4" />
+    <div class="loading" aria-hidden="true">
+      <img src="/Logo_black.webp" alt="" width="2094" height="532" class="w-[400px] max-w-3/4 h-auto" />
     </div>
   </body>
 </html>
 
 <style>
-
   .loading {
     width: 100%;
     height: 100vh;
     position: fixed;
-    left: 0;
-    top: 0;
+    inset: 0;
     background: var(--mainBg);
     z-index: 1000;
     display: flex;

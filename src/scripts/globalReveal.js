@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
 export function animateHeadlines() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const headlines = document.querySelectorAll('.reveal')
 
   headlines.forEach((el) => {
@@ -31,6 +33,8 @@ export function animateHeadlines() {
 }
 
 export function animateHeroHeadlines() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const headlines = document.querySelectorAll('.heroReveal')
 
   headlines.forEach((el) => {
@@ -53,6 +57,8 @@ export function animateHeroHeadlines() {
 }
 
 export function animateContents() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const content = document.querySelectorAll('.contentReveal')
 
     content.forEach((el) => {

@@ -4,7 +4,7 @@ import Hero from "../components/Hero.astro";
 import CardGrid from "../components/CardGrid.astro";
 
 const hero = {
-    image: "/images/ueberUns/hero.jpg",
+    image: "/images/ueberUns/hero.webp",
     h1: "Über Uns",
     h2: "",
     p: "Wir stellen uns vor: Unsere Geschichte und Erfolg der letzten Jahre. "
@@ -29,7 +29,7 @@ const cards = [
 ];
 ---
 
-<Layout>
+<Layout title="Über Uns" description="Seit 2009 kreativ in Holle: Unsere Geschichte, unser Team und unsere Leidenschaft für Handgemachtes und persönlichen Service.">
     <Hero block={hero} />
     <div class="mainWrapper">
         <div class="rounded-lg shadow bg-white grid p-5 lg:p-15 w-fit m-auto py-20">

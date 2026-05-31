@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hollerallerlei.de/sitemap-index.xml

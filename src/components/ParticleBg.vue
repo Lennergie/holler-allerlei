@@ -6,6 +6,8 @@
 import { onMounted, nextTick } from "vue";
 
 onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const particles = document.createElement("script");
   particles.setAttribute(
     "src",
