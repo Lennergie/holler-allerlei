@@ -1,77 +1,77 @@
-import { gsap } from 'gsap'
-import { SplitText } from 'gsap/SplitText'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from 'gsap';
+import { SplitText } from 'gsap/SplitText';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(SplitText, ScrollTrigger)
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export function animateHeadlines() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const headlines = document.querySelectorAll('.reveal')
+    const headlines = document.querySelectorAll('.reveal');
 
-  headlines.forEach((el) => {
-    const split = new SplitText(el, {
-      type: 'lines',
-      linesClass: 'line'
-    })
+    headlines.forEach((el) => {
+        const split = new SplitText(el, {
+            type: 'lines',
+            linesClass: 'line',
+        });
 
-    split.lines.forEach((line) => {
-      gsap.set(line, { backgroundSize: '200% 100%', backgroundPositionX: '100%' })
+        split.lines.forEach((line) => {
+            gsap.set(line, { backgroundSize: '200% 100%', backgroundPositionX: '100%' });
 
-      gsap.to(line, {
-        backgroundPositionX: '0%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: line,
-          start: 'top 75%',
-          end: 'bottom 75%',
-          scrub: 3,
-        }
-      })
-    })
-  })
+            gsap.to(line, {
+                backgroundPositionX: '0%',
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: line,
+                    start: 'top 75%',
+                    end: 'bottom 75%',
+                    scrub: 3,
+                },
+            });
+        });
+    });
 }
 
 export function animateHeroHeadlines() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const headlines = document.querySelectorAll('.heroReveal')
+    const headlines = document.querySelectorAll('.heroReveal');
 
-  headlines.forEach((el) => {
-    const split = new SplitText(el, {
-      type: 'lines',
-      linesClass: 'line'
-    })
+    headlines.forEach((el) => {
+        const split = new SplitText(el, {
+            type: 'lines',
+            linesClass: 'line',
+        });
 
-    split.lines.forEach((line) => {
-      gsap.set(line, { backgroundSize: '200% 100%', backgroundPositionX: '100%' })
+        split.lines.forEach((line) => {
+            gsap.set(line, { backgroundSize: '200% 100%', backgroundPositionX: '100%' });
 
-      gsap.to(line, {
-        backgroundPositionX: '0%',
-        ease: 'none',
-        stagger: 2,
-        duration: "2",
-      })
-    })
-  })
+            gsap.to(line, {
+                backgroundPositionX: '0%',
+                ease: 'none',
+                stagger: 2,
+                duration: '2',
+            });
+        });
+    });
 }
 
 export function animateContents() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const content = document.querySelectorAll('.contentReveal')
+    const content = document.querySelectorAll('.contentReveal');
 
     content.forEach((el) => {
-        gsap.set(el, { translateY: 50 })
+        gsap.set(el, { translateY: 50 });
         gsap.to(el, {
             translateY: 0,
             ease: 'none',
             scrollTrigger: {
-            trigger: el,
-            start: 'top 75%',
-            end: 'center 75%',
-            scrub: 3
-            }
-        })
-    })
+                trigger: el,
+                start: 'top 75%',
+                end: 'center 75%',
+                scrub: 3,
+            },
+        });
+    });
 }

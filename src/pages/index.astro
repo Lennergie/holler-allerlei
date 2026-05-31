@@ -5,6 +5,7 @@ import CategoryIcons from "../components/CategoryIcons.astro";
 import LocationMap from "../components/LocationMap.astro";
 import FeatureBlock from "../components/FeatureBlock.astro"
 import News from '../components/News.astro';
+import FlyerComponent from "../components/FlyerComponent.astro";
 
 const hero = {
     image: "/images/hero.webp",
@@ -71,6 +72,7 @@ const feenBlock = {
 
 <Layout title="Holler Allerlei" description="Dein Lieblingsladen in Holle: Handgemachtes, Kreativbedarf, Schulbedarf, Wolle, Dekoartikel und persönlicher Service seit 2009.">
     <Hero block={hero} />
+    <FlyerComponent />
     <CategoryIcons />
     <News />
     <FeatureBlock block={holzBlock} />
